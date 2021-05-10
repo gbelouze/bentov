@@ -1,0 +1,5 @@
+(test
+ (name main)
+ (libraries mybentov bentov repr fmt)
+ (preprocess
+  (pps ppx_repr)))

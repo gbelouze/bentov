@@ -1,0 +1,33 @@
+opam-version: "2.0"
+synopsis: "In place implementation of the bentov package."
+description:
+  "This package provides a faster implementation of the data structure exposed in the bentov package, with a lower memory overhead."
+maintainer: "gabriel.belouze@tarides.com"
+authors: "Gabriel Belouze"
+license: "MIT"
+homepage: "https://github.com/gbelouze/tarides-gabriel-internship/"
+bug-reports: "https://github.com/gbelouze/tarides-gabriel-internship/issues/"
+depends: [
+  "dune" {>= "2.0"}
+  "ocaml" {>= "4.08.0"}
+  "alcotest" {with-test}
+  "repr" {>= "0.2.1"}
+  "ppx_repr" {>= "0.2.1"}
+  "bentov" {>= "1" & with-test}
+  "fmt" {>= "0.8.9" & with-test}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/gbelouze/tarides-gabriel-internship.git"

@@ -1,0 +1,6 @@
+(library
+ (name mybentov)
+ (public_name mybentov)
+ (libraries repr)
+ (preprocess
+  (pps ppx_repr)))
