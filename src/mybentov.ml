@@ -78,3 +78,5 @@ let add value histogram =
     | `Inserted_above i -> merge bin histogram.bins.(i));
 
   histogram.total_count <- histogram.total_count + 1
+
+let clear histogram = histogram.total_count <- 0

@@ -16,3 +16,5 @@ val create : int -> histogram
 
 val add : float -> histogram -> unit
 (** [add v h] adds a value to [v] to histogram [h] *)
+
+val clear : histogram -> unit
